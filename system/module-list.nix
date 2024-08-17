@@ -1,0 +1,6 @@
+[
+  ./gnome
+  ./boot
+  ./sound
+  ./hardware
+]
