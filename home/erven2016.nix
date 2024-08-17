@@ -3,6 +3,18 @@ let
   inherit (lib) mkDefault;
 in
 {
+  users.users = {
+    erven2016 = {
+      isNormalUser = true;
+      extraGroups = [
+        "docker"
+        "wheel"
+        "networkmanager"
+      ];
+      # packages = with pkgs; [ rustup v2raya ];
+    };
+  };
+
   home-manager.users.erven2016 = {
 
     # must import in home-manager user scope

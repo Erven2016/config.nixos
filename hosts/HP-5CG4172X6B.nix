@@ -27,18 +27,6 @@
   # Set your time zone.
   time.timeZone = "Asia/Taipei";
 
-  users.users = {
-    erven2016 = {
-      isNormalUser = true;
-      extraGroups = [
-        "docker"
-        "wheel"
-        "networkmanager"
-      ];
-      # packages = with pkgs; [ rustup v2raya ];
-    };
-  };
-
   # ZSH & oh-my-zsh
   programs.zsh = {
     enable = true;
