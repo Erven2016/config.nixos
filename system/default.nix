@@ -53,6 +53,8 @@ in
   config = {
     # minimal system enviroment setup
     environment.systemPackages = with pkgs; [
+      joshuto
+      
       # editors
       nano
 

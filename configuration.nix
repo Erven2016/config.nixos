@@ -7,6 +7,7 @@
     /etc/nixos/hardware-configuration.nix
 
     ./system
+    ./modules
   ];
 
   system.stateVersion = "24.05";
