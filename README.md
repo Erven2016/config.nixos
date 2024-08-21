@@ -1,4 +1,4 @@
 # My personal NixOS configuration
 
-## File structure
+🚧 This repo is undering refactoring and testing.
 
