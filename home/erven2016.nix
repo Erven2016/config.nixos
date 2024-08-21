@@ -1,7 +1,4 @@
-{ lib, pkgs, ... }:
-let
-  inherit (lib) mkDefault;
-in
+{ pkgs, ... }:
 {
   users.users = {
     erven2016 = {
@@ -28,6 +25,11 @@ in
     home.programs.kitty.enable = true;
     home.programs.kitty.startWithZellij = true;
 
+    custom-home.programs.helix.enable = true;
+    custom-home.programs.helix.lsp = {
+      rust.enable = true;
+    };
+
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
@@ -48,51 +50,6 @@ in
       lazygit
       google-chrome
     ];
-
-    programs.helix = {
-      enable = true;
-      defaultEditor = true;
-      settings = {
-        theme = "github_dark_tritanopia";
-        editor = {
-          mouse = mkDefault false;
-          cursorline = true;
-          auto-format = false;
-          color-modes = true;
-          default-line-ending = "lf";
-          popup-border = "all";
-
-          lsp = {
-            enable = true;
-            display-messages = true;
-          };
-
-          cursor-shape = {
-            normal = "block";
-            insert = "bar";
-            select = "underline";
-          };
-
-        };
-
-        keys.normal = {
-          space.i = ":format";
-        };
-      };
-
-      languages.language = [
-        {
-          name = "nix";
-          auto-format = true;
-          formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
-        }
-      ];
-
-      extraPackages = with pkgs; [
-        nil
-        nixfmt-rfc-style
-      ];
-    };
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage

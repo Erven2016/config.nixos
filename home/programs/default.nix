@@ -1,5 +1,6 @@
 {
   imports = [
+    ./helix
     ./kitty
     ./zellij
   ];
