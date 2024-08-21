@@ -28,7 +28,7 @@ in
       font_family = "JetBrainsMono NF";
       font_size = "13.0";
       disable_ligatures = "never";
-      "wayland_titlebar_color" = "#2E3440";
+      "wayland_titlebar_color" = "#000000";
       # "linux_display_server" = "x11"; # use native gnome titlebar.
       "startup_session" = if config.home.programs.kitty.startWithZellij then "zellij.session" else "";
     };
