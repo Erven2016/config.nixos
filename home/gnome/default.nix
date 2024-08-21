@@ -36,7 +36,7 @@ in
         enable-extensions = with pkgs.gnomeExtensions; [
           blur-my-shell.extensionUuid
           # dash-to-panel.extensionUuid
-          dash-to-dock.extensionUuid
+          # dash-to-dock.extensionUuid
           customize-ibus.extensionUuid
           appindicator.extensionUuid
           auto-activities.extensionUuid
@@ -50,7 +50,7 @@ in
       [
         blur-my-shell
         # dash-to-panel
-        dash-to-dock
+        # dash-to-dock
         customize-ibus
         appindicator
         auto-activities
