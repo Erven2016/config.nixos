@@ -43,7 +43,12 @@ in
         atomix # puzzle game
       ]);
 
-    environment.systemPackages = [ pkgs.gnome.gnome-tweaks ];
+    environment.systemPackages = with pkgs; [
+      gnome.gnome-tweaks
+      whitesur-icon-theme
+      whitesur-gtk-theme
+      whitesur-cursors
+    ];
 
     # todo: use home-manager to manager gnome extensions
 
