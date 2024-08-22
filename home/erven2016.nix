@@ -8,7 +8,6 @@
         "wheel"
         "networkmanager"
       ];
-      # packages = with pkgs; [ rustup v2raya ];
       shell = pkgs.zsh;
     };
   };
@@ -17,6 +16,13 @@
 
     # must import in home-manager user scope
     imports = [ ./module-list.nix ];
+
+    # Custom packages
+    home.packages = with pkgs; [
+      lazygit
+      hugo
+      google-chrome
+    ];
 
     home.username = "erven2016";
     home.homeDirectory = "/home/erven2016";
@@ -48,11 +54,6 @@
         init.defaultBranch = "main";
       };
     };
-
-    home.packages = with pkgs; [
-      lazygit
-      google-chrome
-    ];
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
