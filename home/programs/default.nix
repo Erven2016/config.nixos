@@ -3,5 +3,6 @@
     ./helix
     ./kitty
     ./zellij
+    ./zsh
   ];
 }

@@ -54,7 +54,7 @@ in
     # minimal system enviroment setup
     environment.systemPackages = with pkgs; [
       joshuto
-      
+
       # editors
       nano
 
@@ -91,5 +91,11 @@ in
 
     # use latest linux kernel
     boot.kernelPackages = mkIf (config.os.kernel.enableLatest) pkgs.linuxPackages_latest;
+
+    # Z SHELL (ZSH)
+    # users.defaultUserShell = pkgs.zsh;
+    # environment.shells = with pkgs; [ zsh ];
+    programs.zsh.enable = true;
+
   };
 }

@@ -29,32 +29,6 @@
   # Set your time zone.
   time.timeZone = "Asia/Taipei";
 
-  # ZSH & oh-my-zsh
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
-    };
-    # history.size = 10000;
-    # history.path = "${config.xdg.dataHome}/zsh/history";
-
-    # Use oh-my-zsh as zsh plugin manager
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "gentoo";
-    };
-  };
-
-  # Set zsh as default shellI
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
-
   # ProxyChains
   programs.proxychains = {
     enable = true;

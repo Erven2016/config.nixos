@@ -9,6 +9,7 @@
         "networkmanager"
       ];
       # packages = with pkgs; [ rustup v2raya ];
+      shell = pkgs.zsh;
     };
   };
 
@@ -29,6 +30,8 @@
     custom-home.programs.helix.lsp = {
       rust.enable = true;
     };
+
+    custom-home.zsh.enable = true;
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
