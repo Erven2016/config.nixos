@@ -48,7 +48,16 @@ in
             type = types.bool;
             default = true;
             example = false;
-            description = "Enable nix support for nix";
+            description = "Enable nix support.";
+          };
+        };
+
+        yaml = {
+          enable = mkOption {
+            type = types.bool;
+            default = true;
+            example = false;
+            description = "Enable yaml lsp support.";
           };
         };
       };
@@ -112,6 +121,8 @@ in
             nixfmt-rfc-style
           ]
         ))
+
+        (mkIf (cfg.lsp.yaml.enable) (with pkgs; [ yaml-language-server ]))
       ];
     };
   };
