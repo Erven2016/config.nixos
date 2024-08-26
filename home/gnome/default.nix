@@ -35,7 +35,7 @@ in
         disable-user-extensions = false;
         enable-extensions = with pkgs.gnomeExtensions; [
           blur-my-shell.extensionUuid
-          # dash-to-panel.extensionUuid
+          dash-to-panel.extensionUuid
           # dash-to-dock.extensionUuid
           customize-ibus.extensionUuid
           appindicator.extensionUuid
@@ -49,7 +49,7 @@ in
       with pkgs.gnomeExtensions;
       [
         blur-my-shell
-        # dash-to-panel
+        dash-to-panel
         # dash-to-dock
         customize-ibus
         appindicator

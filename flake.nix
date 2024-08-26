@@ -22,6 +22,7 @@
     distro-grub-themes = {
       url = "github:AdisonCavani/distro-grub-themes/master";
     };
+    dynamic-gnome-wallpapers.url = "github:Erven2016/dynamic-gnome-wallpapers.nur/master";
   };
   outputs =
     inputs@{
@@ -33,6 +34,7 @@
       nixos-hardware,
       home-manager,
       distro-grub-themes,
+      dynamic-gnome-wallpapers,
       ...
     }:
     let
@@ -44,6 +46,7 @@
               overlay-nixpkgs-unstable
               overlay-nur-erven2016
               overlay-nur-erven2016-unstable
+              overlay-nur-dynamic-gnome-wallpapers
             ];
           }
         )
@@ -68,6 +71,9 @@
           # inherit (final) system;
           # config.allowUnfree = true;
         };
+      };
+      overlay-nur-dynamic-gnome-wallpapers = final: prev: {
+        dynamic-gnome-wallpapers = import dynamic-gnome-wallpapers { };
       };
     in
     {

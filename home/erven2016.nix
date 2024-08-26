@@ -22,6 +22,7 @@
       lazygit
       hugo
       google-chrome
+      vscode
     ];
 
     home.username = "erven2016";

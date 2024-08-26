@@ -2,6 +2,25 @@
 {
   imports = [ ];
 
+  # hardware.steam-hardware.enable = true;
+
+  environment.systemPackages =
+    with pkgs;
+    [
+      unstable.librime-lua
+      # easyeffects
+      flatpak-builder # flatpak dev
+
+      libheif
+    ]
+    ++ (with dynamic-gnome-wallpapers; [
+      macos-sonoma
+      macos-ventura
+      moon-far-view
+      win11-bloom-ventura
+      win11-bloom-gradient
+    ]);
+
   os.bootloader.enable = true;
   os.desktop.enable = true;
 
