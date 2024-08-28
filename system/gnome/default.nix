@@ -10,12 +10,12 @@ in
 {
   imports = [ ];
   options = { };
-  config = mkIf (config.os.desktop.enable && config.os.desktop.name == "gnome") {
+  config = mkIf (config.custom-system.desktop.enable && config.custom-system.desktop.name == "gnome") {
     # enable xorg display server
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = config.os.desktop.enableWayland;
+      displayManager.gdm.wayland = config.custom-system.desktop.enableWayland;
       desktopManager.gnome.enable = true;
     };
 

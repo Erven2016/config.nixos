@@ -3,4 +3,5 @@
   ./boot
   ./sound
   ./hardware
+  ./fonts
 ]

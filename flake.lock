@@ -25,11 +25,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1724659495,
-        "narHash": "sha256-feReo2PgKKp2OrOn51GJNosDrjPHysWzo3bi0sRiFCE=",
+        "lastModified": 1724799204,
+        "narHash": "sha256-yFvDfjCQN7nJuXD3mqVdYGtmHvuLLiHyhTIJ8jRPbgw=",
         "owner": "Erven2016",
         "repo": "dynamic-gnome-wallpapers.nur",
-        "rev": "e89a4eca1ceff54c65882077e441a364cd1aed18",
+        "rev": "4f698a1aec8d4ca98fe3356ad566121d00a1fd42",
         "type": "github"
       },
       "original": {
@@ -112,11 +112,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1724224976,
-        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "lastModified": 1724479785,
+        "narHash": "sha256-pP3Azj5d6M5nmG68Fu4JqZmdGt4S4vqI5f8te+E/FTw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "rev": "d0e1602ddde669d5beb01aec49d71a51937ed7be",
         "type": "github"
       },
       "original": {
@@ -144,11 +144,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1724316499,
-        "narHash": "sha256-Qb9MhKBUTCfWg/wqqaxt89Xfi6qTD3XpTzQ9eXi3JmE=",
+        "lastModified": 1724531977,
+        "narHash": "sha256-XROVLf9ti4rrNCFLr+DmXRZtPjCQTW4cYy59owTEmxk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "797f7dc49e0bc7fab4b57c021cdf68f595e47841",
+        "rev": "2527da1ef492c495d5391f3bcf9c1dd9f4514e32",
         "type": "github"
       },
       "original": {
@@ -195,11 +195,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1724607578,
-        "narHash": "sha256-RJDB1rs2Hf6ZGjNl3X8kAzvNAGnxnB0MGPpcIIiG8HA=",
+        "lastModified": 1724666364,
+        "narHash": "sha256-ck4ryUg2U85WKghA+FrUws2p1Wb6ShLXjLSgIgzK73M=",
         "owner": "Erven2016",
         "repo": "nur",
-        "rev": "adb845424a8d25323bb3ff3279f929a8744cddfe",
+        "rev": "48667b02c858b6699c9e21841584cc94a44451bb",
         "type": "github"
       },
       "original": {
@@ -214,11 +214,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1724607413,
-        "narHash": "sha256-RJDB1rs2Hf6ZGjNl3X8kAzvNAGnxnB0MGPpcIIiG8HA=",
+        "lastModified": 1724666208,
+        "narHash": "sha256-ck4ryUg2U85WKghA+FrUws2p1Wb6ShLXjLSgIgzK73M=",
         "owner": "Erven2016",
         "repo": "nur",
-        "rev": "0a3164f509442386e2ac9f951f57b2b911fccb30",
+        "rev": "b4093a736e52cb6733455292de3cf51f77a20582",
         "type": "github"
       },
       "original": {

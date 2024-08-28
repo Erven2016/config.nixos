@@ -10,8 +10,8 @@ in
 {
   imports = [ ] ++ import ./module-list.nix;
 
-  options = {
-    os.desktop.enable = mkOption {
+  options.custom-system = {
+    desktop.enable = mkOption {
       type = types.bool;
       default = false;
       example = true;
@@ -20,7 +20,7 @@ in
       '';
     };
 
-    os.desktop.name = mkOption {
+    desktop.name = mkOption {
       type = types.str;
       default = "gnome";
       example = "kde";
@@ -31,7 +31,7 @@ in
       '';
     };
 
-    os.desktop.enableWayland = mkOption {
+    desktop.enableWayland = mkOption {
       type = types.bool;
       default = true;
       example = false;
@@ -40,7 +40,7 @@ in
       '';
     };
 
-    os.kernel.enableLatest = mkOption {
+    kernel.enableLatest = mkOption {
       type = types.bool;
       default = true;
       example = false;
@@ -54,6 +54,8 @@ in
     # minimal system enviroment setup
     environment.systemPackages = with pkgs; [
       joshuto
+
+      pkg-config
 
       # editors
       nano
@@ -90,7 +92,7 @@ in
     ];
 
     # use latest linux kernel
-    boot.kernelPackages = mkIf (config.os.kernel.enableLatest) pkgs.linuxPackages_latest;
+    boot.kernelPackages = mkIf (config.custom-system.kernel.enableLatest) pkgs.linuxPackages_latest;
 
     # Z SHELL (ZSH)
     # users.defaultUserShell = pkgs.zsh;

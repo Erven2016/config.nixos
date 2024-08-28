@@ -12,17 +12,43 @@
       flatpak-builder # flatpak dev
 
       libheif
+
+      rustup
+      gcc
     ]
     ++ (with dynamic-gnome-wallpapers; [
       macos-sonoma
       macos-ventura
+      macos-sequoia
       moon-far-view
       win11-bloom-ventura
       win11-bloom-gradient
     ]);
 
   os.bootloader.enable = true;
-  os.desktop.enable = true;
+  custom-system.desktop.enable = true;
+
+  custom-system = {
+    fonts = {
+      extra-fonts = with pkgs; [
+        wqy_microhei
+        wqy_zenhei
+        source-han-sans
+        source-han-serif
+        roboto
+
+        nur-erven2016.otf-pingfang
+        nur-erven2016.otf-sf-pro
+
+        (nerdfonts.override {
+          fonts = [
+            "FiraCode"
+            "JetBrainsMono"
+          ];
+        })
+      ];
+    };
+  };
 
   custom-modules.enable-google-chrome-wayland = true;
 
@@ -110,62 +136,4 @@
       "/usr/share/icons" = mkRoSymBind "${aggregatedIcons}/share/icons";
       "/usr/local/share/fonts" = mkRoSymBind "${aggregatedFonts}/share/fonts";
     };
-
-  # Fonts
-  fonts = {
-    enableDefaultPackages = true;
-    fontDir.enable = true;
-    enableGhostscriptFonts = true;
-    packages = with pkgs; [
-      corefonts # Microsoft's TrueType core fonts for the Web
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-extra
-      noto-fonts-emoji
-      wqy_microhei
-      wqy_zenhei
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      source-han-sans
-      source-han-serif
-      sarasa-gothic # 更纱黑体
-      source-code-pro
-      hack-font
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "DroidSansMono"
-          "JetBrainsMono"
-        ];
-      })
-      roboto
-      nur-erven2016.otf-pingfang
-      nur-erven2016.otf-sf-pro
-    ];
-
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        emoji = [ "Noto Color Emoji" ];
-        monospace = [
-          "Noto Sans Mono CJK SC"
-          "Noto Color Emoji"
-          "Sarasa Mono SC"
-          "DejaVu Sans Mono"
-        ];
-        sansSerif = [
-          "Noto Sans CJK SC"
-          "Noto Color Emoji"
-          "Source Han Sans SC"
-          "DejaVu Sans"
-        ];
-        serif = [
-          "Noto Serif CJK SC"
-          "Noto Color Emoji"
-          "Source Han Serif SC"
-          "DejaVu Serif"
-        ];
-      };
-    };
-  };
 }
