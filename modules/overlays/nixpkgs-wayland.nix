@@ -21,7 +21,12 @@ in
       (self: super: {
         google-chrome = mkIf config.custom-modules.enable-google-chrome-wayland (
           super.google-chrome.override {
-            commandLineArgs = "--ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --enable-features=TouchpadOverscrollHistoryNavigation --gtk-version=4;";
+            commandLineArgs = [
+              "--ozone-platform-hint=auto"
+              "--enable-features=WaylandWindowDecorations"
+              "--enable-features=TouchpadOverscrollHistoryNavigation"
+              "--gtk-version=4"
+            ];
           }
         );
       })
