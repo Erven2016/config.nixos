@@ -20,6 +20,7 @@
     # Custom packages
     home.packages = with pkgs; [
       lazygit
+      dust
       hugo
       google-chrome
       vscode
