@@ -65,6 +65,7 @@ in
       htop
       iftop
       iotop
+      bottom
 
       # hardware info & check
       powertop
