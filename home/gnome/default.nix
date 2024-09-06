@@ -35,12 +35,11 @@ in
         disable-user-extensions = false;
         enable-extensions = with pkgs.gnomeExtensions; [
           blur-my-shell.extensionUuid
-          # dash-to-panel.extensionUuid
-          # dash-to-dock.extensionUuid
           customize-ibus.extensionUuid
           appindicator.extensionUuid
           auto-activities.extensionUuid
           gnome-40-ui-improvements.extensionUuid
+          caffeine.extensionUuid
         ];
       };
     };
@@ -49,12 +48,11 @@ in
       with pkgs.gnomeExtensions;
       [
         blur-my-shell
-        # dash-to-panel
-        # dash-to-dock
         customize-ibus
         appindicator
         auto-activities
         gnome-40-ui-improvements
+        caffeine
       ]
     );
   };

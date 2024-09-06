@@ -95,6 +95,10 @@ in
     # use latest linux kernel
     boot.kernelPackages = mkIf (config.custom-system.kernel.enableLatest) pkgs.linuxPackages_latest;
 
+    boot.extraModprobeConfig = ''
+      options hid_apple fnmode=0
+    '';
+
     # Z SHELL (ZSH)
     # users.defaultUserShell = pkgs.zsh;
     # environment.shells = with pkgs; [ zsh ];

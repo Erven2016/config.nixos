@@ -60,6 +60,12 @@ in
             description = "Enable yaml lsp support.";
           };
         };
+
+        toml = { };
+
+        bash = { };
+
+        python = { };
       };
     };
   };
