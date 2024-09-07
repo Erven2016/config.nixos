@@ -34,7 +34,6 @@ in
           ])
           ++ (with pkgs.gnome; [
             cheese # webcam tool
-            gnome-terminal
             epiphany # web browser
             geary # email reader
             evince # document viewer
@@ -45,7 +44,7 @@ in
             atomix # puzzle game
           ]);
 
-        environment.systemPackages = with pkgs; [ gnome.gnome-tweaks ];
+        environment.systemPackages = with pkgs; [ gnome.gnome-tweaks gnome.gnome-terminal ];
 
         # todo: use home-manager to manager gnome extensions
 
