@@ -76,7 +76,7 @@ in
     programs.helix = {
       defaultEditor = true;
       settings = {
-        theme = "github_dark_tritanopia";
+        theme = "github_dark_tritanopia_transparent";
         editor = {
           mouse = mkDefault false;
           cursorline = true;
@@ -130,6 +130,13 @@ in
 
         (mkIf (cfg.lsp.yaml.enable) (with pkgs; [ yaml-language-server ]))
       ];
+    };
+
+    xdg.configFile."helix/themes/github_dark_tritanopia_transparent.toml" = {
+      text = ''
+        inherits = "github_dark_tritanopia"
+        "ui.background" = {}
+      '';
     };
   };
 }

@@ -29,7 +29,7 @@ in
       font_size = "13.0";
       disable_ligatures = "never";
       "wayland_titlebar_color" = "#000000";
-      # "linux_display_server" = "x11"; # use native gnome titlebar.
+      background_opacity = "0.8";
       "startup_session" = if config.home.programs.kitty.startWithZellij then "zellij.session" else "";
     };
 

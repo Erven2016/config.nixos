@@ -1,3 +1,12 @@
+#
+#   ███████╗██████╗ ██╗   ██╗███████╗███╗   ██╗██████╗  ██████╗  ██╗ ██████╗ 
+#   ██╔════╝██╔══██╗██║   ██║██╔════╝████╗  ██║╚════██╗██╔═████╗███║██╔════╝ 
+#   █████╗  ██████╔╝██║   ██║█████╗  ██╔██╗ ██║ █████╔╝██║██╔██║╚██║███████╗ 
+#   ██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██╔═══╝ ████╔╝██║ ██║██╔═══██╗
+#   ███████╗██║  ██║ ╚████╔╝ ███████╗██║ ╚████║███████╗╚██████╔╝ ██║╚██████╔╝
+#   ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚══════╝ ╚═════╝  ╚═╝ ╚═════╝ 
+#
+                                                                         
 { pkgs, ... }:
 {
   users.users = {
@@ -12,7 +21,22 @@
     };
   };
 
+  # environment.systemPackages = with pkgs; [ unstable.zed-editor ];
+
   home-manager.users.erven2016 = {
+
+    # This value determines the Home Manager release that your
+    # configuration is compatible with. This helps avoid breakage
+    # when a new Home Manager release introduces backwards
+    # incompatible changes.
+    #
+    # You can update Home Manager without changing this value. See
+    # the Home Manager release notes for a list of state version
+    # changes in each release.
+    home.stateVersion = "24.05";
+
+    home.username = "erven2016";
+    home.homeDirectory = "/home/erven2016";
 
     # must import in home-manager user scope
     imports = [ ./module-list.nix ];
@@ -28,9 +52,6 @@
       google-chrome
       vscode
     ];
-
-    home.username = "erven2016";
-    home.homeDirectory = "/home/erven2016";
 
     home.desktop.gnome.extension.enable = true;
 
@@ -59,15 +80,5 @@
         init.defaultBranch = "main";
       };
     };
-
-    # This value determines the Home Manager release that your
-    # configuration is compatible with. This helps avoid breakage
-    # when a new Home Manager release introduces backwards
-    # incompatible changes.
-    #
-    # You can update Home Manager without changing this value. See
-    # the Home Manager release notes for a list of state version
-    # changes in each release.
-    home.stateVersion = "24.05";
   };
 }
