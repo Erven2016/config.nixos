@@ -15,9 +15,6 @@
     nur-erven2016 = {
       url = "github:Erven2016/nur/master";
     };
-    nur-erven2016-unstable = {
-      url = "github:Erven2016/nur/unstable";
-    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     distro-grub-themes = {
       url = "github:AdisonCavani/distro-grub-themes/master";
@@ -30,7 +27,6 @@
       nixpkgs,
       nixpkgs-unstable,
       nur-erven2016,
-      nur-erven2016-unstable,
       nixos-hardware,
       home-manager,
       distro-grub-themes,
@@ -45,7 +41,6 @@
             nixpkgs.overlays = [
               overlay-nixpkgs-unstable
               overlay-nur-erven2016
-              overlay-nur-erven2016-unstable
               overlay-nur-dynamic-gnome-wallpapers
             ];
           }
@@ -62,12 +57,6 @@
       };
       overlay-nur-erven2016 = final: prev: {
         nur-erven2016 = import nur-erven2016 {
-          # inherit (final) system;
-          # config.allowUnfree = true;
-        };
-      };
-      overlay-nur-erven2016-unstable = final: prev: {
-        nur-erven2016-unstable = import nur-erven2016-unstable {
           # inherit (final) system;
           # config.allowUnfree = true;
         };
@@ -97,11 +86,10 @@
           home-manager.nixosModules.home-manager
           ./home
           ./home/erven2016.nix
+
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
-            # home-manager.users.erven2016 = import ./home/erven2016.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix

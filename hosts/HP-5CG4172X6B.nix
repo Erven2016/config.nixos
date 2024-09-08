@@ -23,6 +23,7 @@
     ]);
 
   os.bootloader.enable = true;
+
   custom-system.desktop.enable = true;
 
   custom-system = {
