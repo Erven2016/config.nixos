@@ -21,8 +21,6 @@
     };
   };
 
-  # environment.systemPackages = with pkgs; [ unstable.zed-editor ];
-
   home-manager.users.erven2016 = {
 
     # This value determines the Home Manager release that your

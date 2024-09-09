@@ -29,7 +29,7 @@ in
       font_size = "13.0";
       disable_ligatures = "never";
       "wayland_titlebar_color" = "#000000";
-      background_opacity = "0.8";
+      background_opacity = "0.85";
       "startup_session" = if config.home.programs.kitty.startWithZellij then "zellij.session" else "";
     };
 
