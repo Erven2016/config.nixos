@@ -29,7 +29,6 @@ in
           (with pkgs; [
             gnome-photos
             gnome-tour
-            gnome-console
             gedit # text editor
           ])
           ++ (with pkgs.gnome; [
@@ -44,7 +43,7 @@ in
             atomix # puzzle game
           ]);
 
-        environment.systemPackages = with pkgs; [ gnome.gnome-tweaks gnome.gnome-terminal ];
+        environment.systemPackages = with pkgs; [ gnome.gnome-tweaks ];
 
         # todo: use home-manager to manager gnome extensions
 

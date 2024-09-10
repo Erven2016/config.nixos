@@ -93,7 +93,7 @@
       enabled = "ibus";
       ibus.engines = with pkgs.ibus-engines; [
         libpinyin
-        rime
+        # rime # disable it because librime-lua is under unstable now.
       ];
     };
   };

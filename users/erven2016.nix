@@ -37,7 +37,7 @@
     home.homeDirectory = "/home/erven2016";
 
     # must import in home-manager user scope
-    imports = [ ./module-list.nix ];
+    imports = [ ../home/module-list.nix ];
 
     # Custom packages
     home.packages = with pkgs; [

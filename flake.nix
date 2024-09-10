@@ -85,7 +85,7 @@
           # Home Manager
           home-manager.nixosModules.home-manager
           ./home
-          ./home/erven2016.nix
+          ./users/erven2016.nix
 
           {
             home-manager.useGlobalPkgs = true;

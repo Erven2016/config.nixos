@@ -106,8 +106,31 @@ in
       languages.language = [
         {
           name = "nix";
-          auto-format = true;
+          auto-format = false;
           formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+        }
+        {
+          name = "yaml";
+          auto-format = false;
+          formatter = mkIf cfg.lsp.yaml.enable {
+            command = "yamlfmt";
+            args = [ "-" ];
+          };
+        }
+        # Shell
+        {
+          name = "bash";
+          auto-format = false;
+          formatter = {
+            command = "shfmt";
+            args = [
+              # simplify and minimize code
+              # visit for more details: 
+              # https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
+              "-s"
+              "-mn"
+            ];
+          };
         }
       ];
 
@@ -128,7 +151,15 @@ in
           ]
         ))
 
-        (mkIf (cfg.lsp.yaml.enable) (with pkgs; [ yaml-language-server ]))
+        (mkIf (cfg.lsp.yaml.enable) (
+          with pkgs;
+          [
+            yaml-language-server
+            yamlfmt
+          ]
+        ))
+
+        (with pkgs; [ nodePackages.bash-language-server shfmt ])
       ];
     };
 
