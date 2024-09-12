@@ -34,12 +34,11 @@ in
       settings."org/gnome/shell" = {
         disable-user-extensions = false;
         enable-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell.extensionUuid
-          customize-ibus.extensionUuid
           appindicator.extensionUuid
           auto-activities.extensionUuid
           gnome-40-ui-improvements.extensionUuid
           caffeine.extensionUuid
+          dash2dock-lite.extensionUuid
         ];
       };
     };
@@ -47,12 +46,11 @@ in
     home.packages = mkIf config.home.desktop.gnome.extension.enable (
       with pkgs.gnomeExtensions;
       [
-        blur-my-shell
-        customize-ibus
         appindicator
         auto-activities
         gnome-40-ui-improvements
         caffeine
+        dash2dock-lite
       ]
     );
   };
