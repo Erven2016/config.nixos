@@ -38,7 +38,6 @@ in
           auto-activities.extensionUuid
           gnome-40-ui-improvements.extensionUuid
           caffeine.extensionUuid
-          dash2dock-lite.extensionUuid
         ];
       };
     };
@@ -50,7 +49,6 @@ in
         auto-activities
         gnome-40-ui-improvements
         caffeine
-        dash2dock-lite
       ]
     );
   };
