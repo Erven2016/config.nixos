@@ -23,6 +23,8 @@
 
   home-manager.users.erven2016 = {
 
+    imports = [ ../home ];
+
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards
@@ -36,19 +38,13 @@
     home.username = "erven2016";
     home.homeDirectory = "/home/erven2016";
 
-    # must import in home-manager user scope
-    imports = [ ../home/module-list.nix ];
-
     # Custom packages
     home.packages = with pkgs; [
       lazygit
 
       dust
       dua
-
     ];
-
-    home.desktop.gnome.extension.enable = true;
 
     home.programs.kitty.enable = true;
     home.programs.kitty.startWithZellij = true;

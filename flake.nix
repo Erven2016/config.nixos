@@ -35,6 +35,10 @@
     }:
     let
       genericModules = [
+
+        # home-manager
+        home-manager.nixosModules.home-manager
+
         (
           { config, pkgs, ... }:
           {
@@ -83,17 +87,7 @@
           nixos-hardware.nixosModules.common-hidpi
 
           # Home Manager
-          home-manager.nixosModules.home-manager
-          ./home
           ./users/erven2016.nix
-
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
 
         ];
       };

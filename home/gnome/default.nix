@@ -45,10 +45,7 @@ in
     home.packages = mkIf config.home.desktop.gnome.extension.enable (
       with pkgs.gnomeExtensions;
       [
-        appindicator
-        auto-activities
-        gnome-40-ui-improvements
-        caffeine
+
       ]
     );
   };

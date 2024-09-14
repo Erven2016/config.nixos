@@ -43,7 +43,13 @@ in
             atomix # puzzle game
           ]);
 
-        environment.systemPackages = with pkgs; [ gnome.gnome-tweaks ];
+        environment.systemPackages = with pkgs; [
+          gnome.gnome-tweaks
+          gnomeExtensions.appindicator
+          gnomeExtensions.auto-activities
+          gnomeExtensions.gnome-40-ui-improvements
+          gnomeExtensions.caffeine
+        ];
 
         # todo: use home-manager to manager gnome extensions
 
