@@ -108,7 +108,7 @@
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
 
-  hardware.steam-hardware.enable = true;
+  # hardware.steam-hardware.enable = true;
 
   # Flatpak
   services.flatpak = {

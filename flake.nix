@@ -38,6 +38,7 @@
 
         # home-manager
         home-manager.nixosModules.home-manager
+        ./modules/home-manager
 
         (
           { config, pkgs, ... }:
