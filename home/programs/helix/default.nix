@@ -84,6 +84,14 @@ in
           color-modes = true;
           default-line-ending = "lf";
           popup-border = "all";
+          line-number = mkDefault "relative";
+          bufferline = mkDefault "multiple";
+
+          indent-guides = {
+            render = true;
+            character = "▏";
+            skip-levels = 1;
+          };
 
           lsp = {
             enable = true;
@@ -159,7 +167,10 @@ in
           ]
         ))
 
-        (with pkgs; [ nodePackages.bash-language-server shfmt ])
+        (with pkgs; [
+          nodePackages.bash-language-server
+          shfmt
+        ])
       ];
     };
 

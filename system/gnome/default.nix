@@ -32,10 +32,6 @@ in
             gedit # text editor
           ])
           ++ (with pkgs.gnome; [
-            cheese # webcam tool
-            epiphany # web browser
-            geary # email reader
-            evince # document viewer
             totem # video player
             tali # poker game
             iagno # go game
