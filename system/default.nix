@@ -90,6 +90,8 @@ in
 
       # NixOS
       nixos-icons
+
+      fontconfig
     ];
 
     # use latest linux kernel

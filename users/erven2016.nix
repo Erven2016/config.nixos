@@ -46,9 +46,6 @@
       dua
     ];
 
-    home.programs.kitty.enable = true;
-    home.programs.kitty.startWithZellij = true;
-
     custom-home.programs.helix.enable = true;
     custom-home.programs.helix.lsp = {
       rust.enable = true;

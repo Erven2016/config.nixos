@@ -19,9 +19,12 @@ let
     corefonts # Microsoft's TrueType core fonts for the Web
     # font list to display CJK and Emoji fonts.
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-extra
     noto-fonts-emoji
+    noto-fonts-color-emoji
+    noto-fonts-emoji-blob-bin
   ];
 in
 {

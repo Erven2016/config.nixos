@@ -84,7 +84,6 @@ in
           color-modes = true;
           default-line-ending = "lf";
           popup-border = "all";
-          line-number = mkDefault "relative";
           bufferline = mkDefault "multiple";
 
           indent-guides = {
@@ -137,6 +136,7 @@ in
               # https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
               "-s"
               "-mn"
+              "-"
             ];
           };
         }

@@ -37,6 +37,10 @@ in
             iagno # go game
             hitori # sudoku game
             atomix # puzzle game
+
+            # I don't like it because it will stuck sometime when installing something!!!
+            # Using `flatpak` command to manage flatpak applications in terminal is better
+            gnome-software
           ]);
 
         environment.systemPackages = with pkgs; [
