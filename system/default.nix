@@ -92,6 +92,7 @@ in
       nixos-icons
 
       fontconfig
+      screen
     ];
 
     # use latest linux kernel

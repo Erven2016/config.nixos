@@ -29,6 +29,7 @@ in
           (with pkgs; [
             gnome-photos
             gnome-tour
+            gnome-console # replaced with gnome-terminal
             gedit # text editor
           ])
           ++ (with pkgs.gnome; [
@@ -45,6 +46,7 @@ in
 
         environment.systemPackages = with pkgs; [
           gnome.gnome-tweaks
+          gnome.gnome-terminal
           gnomeExtensions.appindicator
           gnomeExtensions.auto-activities
           gnomeExtensions.gnome-40-ui-improvements
