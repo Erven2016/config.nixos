@@ -1,41 +1,22 @@
 { lib, config, ... }:
 let
-  inherit (lib) mkOption types;
-
-  cfg = config.custom-home.zsh;
+  inherit (lib) mkOption types mkDefault;
 in
 {
-  options.custom-home.zsh = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      example = true;
-      description = "Enable ZSH SHELL;";
-    };
-  };
   config = {
     programs.zsh = {
-      enable = cfg.enable;
-
       oh-my-zsh = {
-        enable = true;
-        plugins = [
+        enable = mkDefault true;
+        plugins = mkDefault [
           "sudo"
           "git"
         ];
-        theme = "gentoo";
+        theme = mkDefault "gentoo";
       };
 
-      sessionVariables = {
-        HTTP_PROXY = "http://localhost:7890";
-        HTTPS_PROXY = "http://localhost:7890";
-        http_proxy = "http://localhost:7890";
-        https_proxy = "http://localhost:7890";
-      };
+      sessionVariables = { };
 
-      shellAliases = {
-        q = "zellij delete-session kitty --force";
-      };
+      shellAliases = { };
     };
   };
 }
