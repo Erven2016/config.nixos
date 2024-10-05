@@ -37,11 +37,7 @@
       dua
     ];
 
-    custom-home.programs.helix.enable = true;
-    custom-home.programs.helix.lsp = {
-      rust.enable = true;
-    };
-
+    programs.helix.enable = true;
     custom-home.zsh.enable = true;
 
     # Let Home Manager install and manage itself.

@@ -24,6 +24,8 @@ in
         # flatpak needs
         xdg.portal.enable = true;
 
+        services.sysprof.enable = true;
+
         # excludePackages
         environment.gnome.excludePackages =
           (with pkgs; [
@@ -51,6 +53,8 @@ in
           gnomeExtensions.auto-activities
           gnomeExtensions.gnome-40-ui-improvements
           gnomeExtensions.caffeine
+          gnomeExtensions.dock-from-dash
+          gnomeExtensions.alphabetical-app-grid
         ];
 
         # todo: use home-manager to manager gnome extensions

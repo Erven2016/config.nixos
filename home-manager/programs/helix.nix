@@ -1,0 +1,96 @@
+{ lib, pkgs, ... }:
+let
+  inherit (lib) mkDefault;
+in
+{
+  config = {
+    # suggested options
+    programs.helix = {
+      defaultEditor = mkDefault true;
+      settings = {
+        theme = mkDefault "github_dark_tritanopia_transparent";
+        editor = {
+          mouse = mkDefault false;
+          cursorline = mkDefault true;
+          auto-format = mkDefault false;
+          color-modes = mkDefault true;
+          default-line-ending = mkDefault "lf";
+          popup-border = mkDefault "all";
+
+          indent-guides = {
+            render = mkDefault true;
+            character = mkDefault "▏";
+            skip-levels = mkDefault 1;
+          };
+
+          lsp = {
+            enable = mkDefault true;
+            display-messages = mkDefault true;
+          };
+
+          cursor-shape = {
+            normal = mkDefault "block";
+            insert = mkDefault "block";
+            select = mkDefault "underline";
+          };
+        };
+
+        keys.normal = {
+          space.i = mkDefault ":format";
+        };
+      };
+
+      languages.language = [
+        {
+          name = "nix";
+          auto-format = false;
+          formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+        }
+        {
+          name = "yaml";
+          auto-format = false;
+          formatter = {
+            command = "yamlfmt";
+            args = [ "-" ];
+          };
+        }
+        # Shell
+        {
+          name = "bash";
+          auto-format = false;
+          formatter = {
+            command = "shfmt";
+            args = [
+              # simplify and minimize code
+              # visit for more details: 
+              # https://github.com/mvdan/sh/blob/master/cmd/shfmt/shfmt.1.scd
+              "-s"
+              "-mn"
+              "-"
+            ];
+          };
+        }
+      ];
+
+      extraPackages = with pkgs; [
+        nodePackages.bash-language-server
+        shfmt
+
+        nil
+        nixfmt-rfc-style
+
+        # Markdown
+        marksman
+        markdown-oxide
+      ];
+    };
+
+    # Tranparent-background theme
+    xdg.configFile."helix/themes/github_dark_tritanopia_transparent.toml" = {
+      text = ''
+        inherits = "github_dark_tritanopia"
+        "ui.background" = {}
+      '';
+    };
+  };
+}
