@@ -44,6 +44,7 @@
           fonts = [
             "FiraCode"
             "JetBrainsMono"
+            "IBMPlexMono"
           ];
         })
       ];
@@ -69,7 +70,7 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.hostName = "HP-5CG4172X6B";
+  networking.hostName = "EliteBook845G11";
 
   # Set your time zone.
   time.timeZone = "Asia/Taipei";

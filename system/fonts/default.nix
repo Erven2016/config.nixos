@@ -54,6 +54,7 @@ in
       default = [
         "FiraCode"
         "JetBrainsMono"
+        "ibm-plex"
       ];
       example = [ ];
       description = "Nerdfonts override.";

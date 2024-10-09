@@ -72,14 +72,14 @@
     in
     {
       # HP HP EliteBook 845 14 inch G11 Notebook PC
-      nixosConfigurations."HP-5CG4172X6B" = nixpkgs.lib.nixosSystem rec {
+      nixosConfigurations."EliteBook845G11" = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = {
           inherit system inputs;
         };
         modules = genericModules ++ [
           ./configuration.nix
-          ./hosts/HP-5CG4172X6B.nix
+          ./hosts/EliteBook845G11.nix
 
           nixos-hardware.nixosModules.common-cpu-amd
           # nixos-hardware.nixosModules.common-cpu-amd-pstate
