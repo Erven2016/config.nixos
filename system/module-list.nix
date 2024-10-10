@@ -1,6 +1,5 @@
 [
   ./gnome
   ./boot
-  ./sound
   ./fonts
 ]

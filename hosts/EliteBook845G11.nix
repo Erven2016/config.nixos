@@ -5,7 +5,6 @@
   environment.systemPackages =
     with pkgs;
     [
-      # easyeffects
       flatpak-builder # flatpak dev
 
       amdgpu_top

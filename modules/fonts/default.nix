@@ -22,7 +22,10 @@ let
   cfg = config.custom.fonts;
 in
 {
-  imports = [ ];
+  imports = [
+    ./nerdfonts.nix
+    ./extrafonts.nix
+   ];
   options.custom.fonts = {
     extraFonts = mkOption { type = types.pkgList; };
     fontConfig = mkOption { };
