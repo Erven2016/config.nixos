@@ -1,10 +1,10 @@
-# My personal NixOS configuration
+# NixOS 配置文件
 
-🚧 This repo is undering refactoring and testing.
+🚧 正在重构
 
 ## 一些常用命令
 
-- `sudo nix-collect-garbage -d`: 清理未使用的 Derivation
+- `sudo nix-collect-garbage -d`: 清理未使用的 Derivation, 降低硬盘占用率
 - `sudo nixos-rebuild [target] --impure --flake . --show-trace`: 构建 nixos
   - [target] 选项
     - switch    构建整个系统
@@ -13,5 +13,6 @@
   - 建议配合 proxychains4 使用
 
 ## 待办事项
-- [ ] Modularize the system configuration
+
+- [ ] 模块化整个配置
 
