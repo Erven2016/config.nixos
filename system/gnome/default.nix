@@ -57,8 +57,6 @@ in
           gnomeExtensions.alphabetical-app-grid
         ];
 
-        # todo: use home-manager to manager gnome extensions
-
         services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
       };
 }
