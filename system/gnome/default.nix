@@ -29,13 +29,12 @@ in
         # excludePackages
         environment.gnome.excludePackages =
           (with pkgs; [
-            gnome-photos
-            gnome-tour
+            gnome-tour # 使用向导
             gnome-console # replaced with gnome-terminal
             gedit # text editor
           ])
           ++ (with pkgs.gnome; [
-            totem # video player
+            # 一些小游戏
             tali # poker game
             iagno # go game
             hitori # sudoku game
