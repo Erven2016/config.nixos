@@ -26,7 +26,8 @@
 - `sudo nix-collect-garbage -d`: 清理无用 derivations，释放硬盘占用
 - `sudo nixos-rebuild @1 --impure --flake .@2 --show-trace`: 构建系统
   - `@1`: `switch`整个系统|`boot`引导分区
-  - `@2`: ``留空默认使用hostname|`#<hostname>`选择hostname构建配置
+  - `@2`: 留空使用当前hostname|`#hostname`选择某个hostname配置
+- 系统更新先执行 `nix flake update` 后再执行构建系统命令
 
 ## 待办事项
 
