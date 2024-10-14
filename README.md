@@ -21,17 +21,15 @@
     └── flake.nix # flake 配置文件
 ```
 
-## 一些常用命令
+## 常用命令
 
-- `sudo nix-collect-garbage -d`: 清理未使用的 Derivation, 降低硬盘占用率
-- `sudo nixos-rebuild [target] --impure --flake . --show-trace`: 构建 nixos
-  - [target] 选项
-    - switch    构建整个系统
-    - boot      构建引导 /boot 例如 grub
-  - 初次安装或修改 hostname 后需要指定 hostname: `--flake .#you-hostname`
-  - 建议配合 proxychains4 使用
+- `sudo nix-collect-garbage -d`: 清理无用 derivations，释放硬盘占用
+- `sudo nixos-rebuild @1 --impure --flake .@2 --show-trace`: 构建系统
+  - `@1`: `switch`整个系统|`boot`引导分区
+  - `@2`: ``留空默认使用hostname|`#<hostname>`选择hostname构建配置
 
 ## 待办事项
 
-- [ ] 模块化整个配置
-
+- [ ] 模块化配置 - 20241015
+- [ ] 添加硬件配置 - 20241015
+- [ ] 废除 ./system/ - 20241015
