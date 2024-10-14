@@ -72,16 +72,24 @@ in
         }
       ];
 
+      # To support filetypes defaultly  etc: 
+      # Bash, yaml, markdown, nix so on
       extraPackages = with pkgs; [
+        # Bash
         nodePackages.bash-language-server
         shfmt
 
+        # Nix
         nil
         nixfmt-rfc-style
 
         # Markdown
         marksman
         markdown-oxide
+
+        # Yaml
+        yaml-language-server
+        yamlfmt
       ];
     };
 

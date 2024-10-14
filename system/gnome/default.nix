@@ -55,6 +55,7 @@ in
           gnomeExtensions.caffeine
           gnomeExtensions.dock-from-dash
           gnomeExtensions.alphabetical-app-grid
+          gnomeExtensions.just-perfection
         ];
 
         services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];

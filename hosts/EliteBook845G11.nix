@@ -5,8 +5,10 @@
   environment.systemPackages =
     with pkgs;
     [
-      flatpak-builder # flatpak dev
+      unstable.flatpak-builder # flatpak dev
 
+
+      appstream # flatpak build testing needs
       amdgpu_top
 
       libheif
@@ -83,6 +85,11 @@
       host = "127.0.0.1";
       port = 7890;
     };
+  };
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
   };
 
   i18n = {
