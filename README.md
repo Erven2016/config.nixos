@@ -2,6 +2,12 @@
 
 🚧 正在重构
 
+## 目录结构
+
+```tree
+
+```
+
 ## 一些常用命令
 
 - `sudo nix-collect-garbage -d`: 清理未使用的 Derivation, 降低硬盘占用率

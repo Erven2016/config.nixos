@@ -2,11 +2,12 @@
 {
   imports = [ ];
 
+  networking.hostName = "pi";
+
   environment.systemPackages =
     with pkgs;
     [
       unstable.flatpak-builder # flatpak dev
-
 
       appstream # flatpak build testing needs
       amdgpu_top
@@ -71,7 +72,6 @@
   };
 
   networking.networkmanager.enable = true;
-  networking.hostName = "EliteBook845G11";
 
   # Set your time zone.
   time.timeZone = "Asia/Taipei";
