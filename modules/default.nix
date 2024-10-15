@@ -4,6 +4,6 @@
     ./flatpak
 
     # test purpose
-    ./power/suspend-and-hibernate.nix 
+    ./power-management/suspend-then-hibernate.nix 
   ];
 }
