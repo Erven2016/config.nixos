@@ -2,8 +2,10 @@
   imports = [
     ./overlays
     ./flatpak
+    ./sound
 
     # test purpose
-    ./power-management/suspend-then-hibernate.nix 
+    # todo: improve this
+    ./power-management/suspend-then-hibernate.nix
   ];
 }
