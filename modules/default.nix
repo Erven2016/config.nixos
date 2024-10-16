@@ -3,6 +3,7 @@
     ./overlays
     ./flatpak
     ./sound
+    ./fonts
 
     # test purpose
     # todo: improve this

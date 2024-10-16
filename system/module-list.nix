@@ -1,5 +1,4 @@
 [
   ./gnome
   ./boot
-  ./fonts
 ]

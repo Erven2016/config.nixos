@@ -33,8 +33,6 @@
     home.packages = with pkgs; [
       lazygit
 
-      unstable.rquickshare
-
       dust
       dua
     ];

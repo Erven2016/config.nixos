@@ -8,31 +8,12 @@ let
   inherit (lib) mkMerge;
 in
 {
-  imports = [ ];
   config = {
     networking.hostName = "pi";
     # 设置时区
     time.timeZone = "Asia/Taipei";
 
-    # environment.systemPackages =
-    #   with pkgs;
-    #   [
-    #     amdgpu_top
-
-    #     libheif
-
-    #     rustup
-    #     gcc
-    #   ]
-    #   ++ (with dynamic-gnome-wallpapers; [
-    #     macos-sonoma
-    #     macos-ventura
-    #     macos-sequoia
-    #     moon-far-view
-    #     win11-bloom-ventura
-    #     win11-bloom-gradient
-    #   ]);
-
+    # 软件列表
     environment.systemPackages = mkMerge [
       (with pkgs; [
         amdgpu_top
@@ -55,32 +36,20 @@ in
 
     custom-system.desktop.enable = true;
 
-    custom-system = {
-      fonts = {
-        extra-fonts = with pkgs; [
-          wqy_microhei
-          wqy_zenhei
-          source-han-sans
-          source-han-serif
-          roboto
+    system.fonts.extraFonts = with pkgs; [
+      wqy_microhei
+      wqy_zenhei
+      source-han-sans
+      source-han-serif
+      roboto
 
-          nur-erven2016.otf-pingfang
-          nur-erven2016.otf-sf-pro
+      nur-erven2016.otf-pingfang
+      nur-erven2016.otf-sf-pro
 
-          (nerdfonts.override {
-            fonts = [
-              "FiraCode"
-              "JetBrainsMono"
-              "IBMPlexMono"
-            ];
-          })
-        ];
-      };
-    };
-
-    custom-modules.enable-google-chrome-wayland = true;
-
-    # todo: modulize above
+      nur-erven2016.otf-pingfang
+      nur-erven2016.otf-sf-pro
+    ];
+    system.fonts.extraNerdFonts = [ "JetBrainsMono" ];
 
     networking.networkmanager.enable = true;
 
