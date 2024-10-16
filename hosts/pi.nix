@@ -45,9 +45,6 @@ in
 
       nur-erven2016.otf-pingfang
       nur-erven2016.otf-sf-pro
-
-      nur-erven2016.otf-pingfang
-      nur-erven2016.otf-sf-pro
     ];
     system.fonts.extraNerdFonts = [ "JetBrainsMono" ];
 
