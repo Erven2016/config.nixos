@@ -32,8 +32,6 @@ in
       ])
     ];
 
-    os.bootloader.enable = true;
-
     custom-system.desktop.enable = true;
 
     system.fonts.extraFonts = with pkgs; [
@@ -47,6 +45,10 @@ in
       nur-erven2016.otf-sf-pro
     ];
     system.fonts.extraNerdFonts = [ "JetBrainsMono" ];
+    fonts.fontconfig.defaultFonts = {
+      sansSerif = [ "PingFang SC" ];
+      serif = [ "PingFang SC" ];
+    };
 
     networking.networkmanager.enable = true;
 

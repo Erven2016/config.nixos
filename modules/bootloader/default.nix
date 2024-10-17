@@ -1,32 +1,25 @@
 {
   lib,
   config,
-  # pkgs,
   inputs,
   system,
   ...
 }:
 let
-  inherit (lib)
-    mkIf
-    mkDefault
-    mkOption
-    types
-    ;
+  inherit (lib) mkEnableOption mkDefault mkIf;
+
+  cfg = config.system.bootloader;
 in
 {
-  options = {
-    os.bootloader.enable = mkOption {
-      type = types.bool;
-      default = false;
-      example = true;
-      description = ''
-        enable bootloader.
-      '';
-    };
+  options.system.bootloader = {
+    enable = mkEnableOption "";
   };
-  config = mkIf config.os.bootloader.enable {
-    boot.loader = {
+  config = {
+    system.bootloader = {
+      enable = mkDefault true;
+    };
+
+    boot.loader = mkIf cfg.enable {
       efi = {
         canTouchEfiVariables = mkDefault true;
         efiSysMountPoint = mkDefault "/boot"; # ← use the same mount point here.

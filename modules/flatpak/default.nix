@@ -13,11 +13,13 @@ in
   imports = [ ];
   options.system.flatpak = {
     enable = mkEnableOption "flatpak for system";
+    autoEnable = mkEnableOption "automatically deploying flatpak";
     enableDevTools = mkEnableOption "installing flatpak-builder, etc.";
   };
   config = {
     # 写死，只允许通过封装选项开启，即 config.system.flatpak.enable
     services.flatpak.enable = cfg.enable;
+    system.flatpak.enableDevTools = false; # 默认不安装 flatpak 打包工具
 
     environment.systemPackages = mkMerge [
       # 安装 Flatpak 开发所需的包

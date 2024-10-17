@@ -1,4 +1,3 @@
 [
   ./gnome
-  ./boot
 ]

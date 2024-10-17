@@ -4,6 +4,7 @@
     ./flatpak
     ./sound
     ./fonts
+    ./bootloader
 
     # test purpose
     # todo: improve this
