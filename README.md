@@ -2,6 +2,8 @@
 
 🚧 正在重构
 
+NixOS 只提供桌面与终端环境，用户图形化软件建议使用 Flatpak 安装。
+
 ## 目录结构
 
 ```tree
@@ -96,6 +98,8 @@ fonts.fontconfig = {
 ```
 
 ### Flatpak
+
+如果使用了桌面环境，flatpak 会自动配置。
 
 ### AppImage
 

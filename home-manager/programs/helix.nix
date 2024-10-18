@@ -1,10 +1,19 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) mkDefault;
+  inherit (lib) mkDefault mkEnableOption;
 in
 {
+  options.home.programs.helix = {
+    enable = mkEnableOption "helix editor in home-manager";
+  };
+
   config = {
-    # suggested options
+    home.programs.helix = {
+      enable = mkDefault true; # 默认安装 helix
+    };
+
+    # 默认 helix 配置
+    # 可以在其他配置文件中 override
     programs.helix = {
       defaultEditor = mkDefault true;
       settings = {
@@ -93,7 +102,7 @@ in
       ];
     };
 
-    # Tranparent-background theme
+    # 自定义透明背景
     xdg.configFile."helix/themes/github_dark_tritanopia_transparent.toml" = {
       text = ''
         inherits = "github_dark_tritanopia"

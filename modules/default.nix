@@ -5,6 +5,7 @@
     ./sound
     ./fonts
     ./bootloader
+    ./kvm
 
     # test purpose
     # todo: improve this

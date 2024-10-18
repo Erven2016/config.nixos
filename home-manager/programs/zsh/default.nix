@@ -21,19 +21,23 @@ in
     enable = mkEnableOption "zsh";
 
     # navi: 终端命令提示表
-    enableNavi = mkEnableOption "navi for zsh";
+    enableNavi = mkEnableOption "navi integration for zsh";
+
+    # yazi: 终端文件管理器
+    enableYazi = mkEnableOption "yazi integration for zsh;";
   };
 
   config = {
     # 设置默认值
     home.programs.zsh.enable = mkDefault true; # 默认安装 zsh
     home.programs.zsh.enableNavi = mkDefault true; # 默认安装 navi
+    home.programs.zsh.enableYazi = mkDefault true; # 默认安装 yazi
 
     # zsh 配置
     programs.zsh = mkIf cfg.enable {
+      enable = cfg.enable; # 写死，只能通过 home.programs.zsh.enable 设置
       oh-my-zsh = {
-        # 这个值要写死，只能从 home.programs.zsh.enable 改
-        enable = cfg.enable;
+        enable = mkDefault true;
         plugins = mkDefault [
           "sudo"
           "git"

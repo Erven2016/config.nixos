@@ -13,6 +13,9 @@ in
     # 设置时区
     time.timeZone = "Asia/Taipei";
 
+    system.flatpak.enable = true;
+    system.kvm.enable = true;
+
     # 软件列表
     environment.systemPackages = mkMerge [
       (with pkgs; [
@@ -34,6 +37,7 @@ in
 
     custom-system.desktop.enable = true;
 
+    # 额外字体配置
     system.fonts.extraFonts = with pkgs; [
       wqy_microhei
       wqy_zenhei
@@ -94,8 +98,5 @@ in
     };
 
     # hardware.steam-hardware.enable = true;
-
-    system.flatpak.enable = true;
-
   };
 }

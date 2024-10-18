@@ -7,6 +7,7 @@
         "docker"
         "wheel"
         "networkmanager"
+        "libvirtd"
       ];
       shell = pkgs.zsh;
     };
@@ -38,7 +39,7 @@
     ];
 
     programs.helix.enable = true;
-    programs.zsh.enable = true;
+    home.programs.zsh.enable = true;
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;

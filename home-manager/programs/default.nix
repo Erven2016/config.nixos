@@ -3,5 +3,6 @@
     ./helix.nix
     ./zsh
     ./navi
+    ./yazi
   ];
 }
