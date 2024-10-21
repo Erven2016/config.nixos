@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (lib) mkMerge;
+  inherit (lib) mkMerge mkForce;
 in
 {
   config = {
@@ -98,5 +98,10 @@ in
     };
 
     # hardware.steam-hardware.enable = true;
+
+    services.fwupd.enable = true;
+    services.fprintd = {
+      enable = true;
+    };
   };
 }

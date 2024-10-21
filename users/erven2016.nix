@@ -38,8 +38,9 @@
       dua
     ];
 
-    programs.helix.enable = true;
+    programs.helix.enable = true; # todo
     home.programs.zsh.enable = true;
+    # home.programs.zed-editor.enable = true;
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;

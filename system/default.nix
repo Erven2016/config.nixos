@@ -89,6 +89,8 @@ in
       # NixOS
       nixos-icons
 
+      nix-tree
+
       fontconfig
       screen
     ];

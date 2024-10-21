@@ -18,6 +18,7 @@ in
     programs.yazi = {
       enable = mkIf (config.home.programs.zsh.enableYazi || cfg.enable) true;
 
+      # 使用 ya 命令
       enableZshIntegration = config.home.programs.zsh.enableYazi;
 
       # settings = { };
