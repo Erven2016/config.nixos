@@ -36,6 +36,10 @@
 
       dust
       dua
+
+      unstable.zed-editor
+
+      nodejs_22
     ];
 
     programs.helix.enable = true; # todo

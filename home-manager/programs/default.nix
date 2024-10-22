@@ -1,5 +1,6 @@
 {
   imports = [
+    # Shell/Terminal
     ./zsh
     ./navi
     ./yazi

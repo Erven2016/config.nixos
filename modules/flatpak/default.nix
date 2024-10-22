@@ -5,7 +5,12 @@
   ...
 }:
 let
-  inherit (lib) mkEnableOption mkIf mkMerge;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkMerge
+    mkForce
+    ;
 
   cfg = config.system.flatpak;
 in
@@ -20,6 +25,9 @@ in
     # 写死，只允许通过封装选项开启，即 config.system.flatpak.enable
     services.flatpak.enable = cfg.enable;
     system.flatpak.enableDevTools = false; # 默认不安装 flatpak 打包工具
+
+    # Flatpak XDG portal 依赖
+    xdg.portal.enable = mkForce true;
 
     environment.systemPackages = mkMerge [
       # 安装 Flatpak 开发所需的包

@@ -9,7 +9,7 @@ let
 in
 {
   config = {
-    networking.hostName = "pi";
+    networking.hostName = "EliteBook845G11";
     # 设置时区
     time.timeZone = "Asia/Taipei";
 
@@ -52,6 +52,10 @@ in
     fonts.fontconfig.defaultFonts = {
       sansSerif = [ "PingFang SC" ];
       serif = [ "PingFang SC" ];
+    };
+
+    system.nodejs = {
+      enable = true;
     };
 
     networking.networkmanager.enable = true;

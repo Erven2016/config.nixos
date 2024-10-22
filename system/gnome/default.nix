@@ -21,9 +21,6 @@ in
           desktopManager.gnome.enable = true;
         };
 
-        # flatpak needs
-        xdg.portal.enable = true;
-
         services.sysprof.enable = true;
 
         # excludePackages

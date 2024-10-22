@@ -39,7 +39,7 @@ in
 
           cursor-shape = {
             normal = mkDefault "block";
-            insert = mkDefault "block";
+            insert = mkDefault "underline";
             select = mkDefault "underline";
           };
         };
